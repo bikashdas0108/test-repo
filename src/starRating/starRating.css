@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: 10px;
+  font-size: 96px;
+  border: 1px solid #646cff;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.star.half {
+  background: linear-gradient(to right, gold 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.star.full {
+  color: gold;
+}
