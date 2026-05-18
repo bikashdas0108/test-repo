@@ -1,0 +1,50 @@
+Frontend Coding Best Practices:
+Number of lines in any ReactJs files should not exceed 300
+- Break into smaller components
+- Create multiple helpers and utility files based on functionalities
+Always create a new folder for components. It will have
+- index file
+- scss file
+- helpers folder (to write helper functions so that business logic is extracted from components)
+   - file names inside helpers => componentName.[functionality of the file].ts
+   - e.g. for general functions => componentName.general.ts
+- constants folder (define all the constants here)
+    - file names inside constants => componentName.[type of the constants].ts
+    - e.g. for general constants => componentName.general.ts
+- custom hooks folder (wherever necessary )
+   - file names inside hooks => use[functionality of the hook].ts
+   - e.g. useGetTableData.ts
+- Components folder (Components written inside the folder will also follow same pattern)
+Try to create dumb components as many as possible.
+Follow SRP (Single Responsibility Principle) and DRY(Don’t repeat yourself) while creating components and writing new functions.
+Do not use any magic numbers.
+Import lodash methods using _ as prefix. e.g. _get, _map, _set
+Avoid writing multiple useState/ useEffect hooks in components. Instead create your custom hooks.
+Use memo, useMemo and useCallback only where it is necessary.
+Follow the appropriate design pattern before creating new components. (Refer: https://www.patterns.dev/react/)
+If you need to pass more than two arguments in functions then pass it as an Object.
+- instead of  sum(a,b,c) write sum({a,b,c})
+Use Component level code splitting to load dynamic components or if you are using conditional rendering to load components based on user actions.
+
+
+
+List of item that need to be followed when developing any feature
+
+
+Every file should be in typescript (Please try to use interface for props, state and avoid using any for data types ) 
+Use RTK query for api calls.
+Using shimmer effect wherever needed.
+Using loading spinner when calling post api on click of CTA.
+Keep deleting unused code and files.
+Whenever we are looping over the items, use forEach instead of map if we are not returning anything from the list.
+Design system -  material ui
+If we have filters in our feature that that should be maintained in URL instead of localstorage.
+Please follow the import order
+      Library imports
+      components/containers
+      Models
+      Custom hooks
+      redux
+      utils/helpers
+      constants
+      Css
